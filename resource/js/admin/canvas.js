@@ -108,24 +108,15 @@ window.addEventListener("load", function(){
        context.globalAlpha = 1;
         var img = new Image();
         img.onload = function(){
-            console.log(img.width, img.height);
-            context.drawImage(img, 0, 0, img.width, img.height, 400, 300, img.width, img.height);
-            var imageData = context.getImageData(400, 300, img.width, img.height);
-           for(var i= 3; i<imageData.length; i+=4){
-                imageData.data[i] = 128;
-            }
-            context.putImageData(imageData, 300, 200, 0, 0, img.width, img.height);
-
-            var imageData1 = context.getImageData(200, 400, img.width, img.height);
-            console.log(imageData1);
+            context.drawImage(img, 0 ,0);
+            context.beginPath();
+            context.fillStyle = context.createPattern(img, "repeat"); // 创建图案填充，参数：图像实例、填充重复方式
+            context.arc(500, 420, 100, (Math.PI / 180) * 0, (Math.PI / 180) * 360, false); // 绘制圆形
+            context.fill();
+            context.closePath();
 
         };
         img.src = "../../resource/image/admin/img-demo.jpg";
-
-
-
-
-
     }
 
     // 检测浏览器是否支持 canvas

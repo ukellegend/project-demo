@@ -71,7 +71,6 @@ window.addEventListener("load", function(){
         context.fill();
 
 
-
     }
 
     // 检测浏览器是否支持 canvas
