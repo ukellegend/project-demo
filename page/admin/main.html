@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>test</title>
+    <style type="text/css">
+        [v-cloak] {
+             display: none;
+        }
+        .btn{
+            width: 100px;
+            height: 40px;
+        }
+        .text{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-    <h4 class="text">测试页面</h4>
-    <script type="text/javascript" src="../../resource/plugin/jquery/jquery-1.12.4.js"></script>
+    <h4 class="text">vue.js测试</h4>
+    <div id="app" v-cloak v-show="show">
+        <input type="text" name=""  class="btn" v-model.number="count">
+        <p class="text" id="#dd" style="color: #555;">{{count}}</p>
+        <button class="btn" v-on:click="addCount"></button>
+    </div>
+    <!-- <script type="text/javascript" src="../../resource/plugin/jquery/jquery-1.12.4.js"></script> -->
+    <script type="text/javascript" src="../../resource/plugin/vue/vue.js"></script>
     <script type="text/javascript" src="../../resource/js/admin/main.js"></script>
 </body>
 </html>
